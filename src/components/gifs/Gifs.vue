@@ -1,6 +1,7 @@
 <template>
   <div class="gifs__container">
     <h1 class="gifs__title">{{ $t('general.giphyTrending') }}</h1>
+    <LoadingSpinner v-if="isLoading" />
     <Gif v-for="gif in gifs" :key="gif.id" :gif="gif" />
     <div v-if="isShowLoadMore" class="load-more">
       <button class="btn" @click="onLoadMore()">{{ $t('general.loadMore') }}</button>
@@ -10,11 +11,13 @@
 
 <script>
 import httpAxios from '@/httpAxios';
+import { LoadingSpinner } from '@/components/common';
 import Gif from './Gif.vue';
 
 export default {
   components: {
     Gif,
+    LoadingSpinner,
   },
 
   data() {
@@ -23,7 +26,7 @@ export default {
       offset: 0,
       isLoading: false,
       gifs: [],
-      isShowLoadMore: true,
+      isShowLoadMore: false,
     };
   },
 
@@ -52,7 +55,7 @@ export default {
         })
         .catch(e => {
           console.log(e);
-          this.$router.push('Error404');
+          // this.$router.push('Error404');
         })
         .finally(() => {
           this.isLoading = false;
