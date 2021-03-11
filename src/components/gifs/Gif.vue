@@ -1,11 +1,11 @@
 <template>
   <div class="gif__container">
-    <img :src="gif.images.preview_gif.url" class="gif__image" @click="onShowModal()" />
+    <img v-lazy="gif.images.preview_gif.url" class="gif__image" @click="onShowModal()" />
     <p class="gif__title">{{ gif.title }}</p>
     <Modal v-if="showModal">
       <template v-slot:body>
         <div class="close-icon" @click="onCloseModal()">X</div>
-        <img :src="gif.images.original.url" class="gif__full" />
+        <img v-lazy="gif.images.original.url" class="gif__full" />
       </template>
     </Modal>
   </div>
