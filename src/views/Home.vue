@@ -1,21 +1,17 @@
 <template>
   <HomePageLayout>
-    <h1>This is home page</h1>
+    <Gifs />
   </HomePageLayout>
 </template>
 
 <script>
+import { Gifs } from '@/components/gifs';
+
 export default {
   name: 'Home',
 
-  components: {},
-
-  data() {
-    return {};
+  components: {
+    Gifs,
   },
-
-  created() {},
-
-  methods: {},
 };
 </script>

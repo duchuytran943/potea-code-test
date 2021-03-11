@@ -1,0 +1,94 @@
+.gifs__container {
+  .gifs__title {
+    width: 100%;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  .load-more {
+    margin: 0.5rem;
+    width: 100%;
+    @include flexCenter();
+
+    .btn {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: solid 1px $color_green_1;
+      color: $color_white;
+      background-color: $color_green_1;
+
+      &:hover {
+        color: $color_green_1;
+        background-color: $color_white;
+      }
+    }
+  }
+}
+
+.gif__container {
+  display: inline-block;
+  width: 50%;
+  padding: 1rem;
+
+  .gif__image {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .gif__title {
+    @include subText(100%);
+    width: 100%;
+    text-align: center;
+  }
+
+  .close-icon {
+    @include position(absolute, 1rem, 1rem, '', '', 9999);
+    @include size(1.5rem);
+    cursor: pointer;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: $fs_24;
+    font-weight: $fw_heavy;
+    color: $color_white;
+  }
+
+  .gif__full {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .gifs__container {
+    max-width: 544px;
+
+    .gif__container {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .gifs__container {
+    max-width: 720px;
+
+    .gif__container {
+      width: 33.33%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .gifs__container {
+    max-width: 940px;
+
+    .gif__container {
+      width: 25%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .gifs__container {
+    max-width: 1140px;
+  }
+}
