@@ -10,6 +10,11 @@ const routes = [
     name: 'Error500',
     component: () => import(/* webpackChunkName: "error500" */ '@/views/Error500.vue'),
   },
+  {
+    path: '/error429',
+    name: 'Error429',
+    component: () => import(/* webpackChunkName: "error429" */ '@/views/Error429.vue'),
+  },
   { path: '*', name: 'Error404', component: () => import(/* webpackChunkName: "error404" */ '@/views/Error404.vue') },
 ];
 

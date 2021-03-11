@@ -29,6 +29,11 @@ service.interceptors.response.use(
       if (error.response.status == 404) {
         console.log('response 404');
       }
+
+      if (error.response.status === 429) {
+        console.log('429');
+        this.$router.push('Error429');
+      }
     }
 
     return Promise.reject(error);
