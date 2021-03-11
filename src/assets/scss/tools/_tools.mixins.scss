@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@mixin size($width, $height: '') {
+  @if $height == '' {
+    height: $width;
+  } @else {
+    height: $height;
+  }
+
+  width: $width;
+}
+
+@mixin subText($width) {
+  max-width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin posCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin posCenterX() {
+  @include transform(translateX(-50%));
+  position: absolute;
+  left: 50%;
+}
+
+@mixin posCenterY() {
+  @include transform(translateY(-50%));
+  position: absolute;
+  top: 50%;
+}
+
+@mixin position($p, $top, $right, $bottom, $left, $zindex: 1) {
+  position: $p;
+  @if $top != '' {
+    top: $top;
+  }
+  @if $right != '' {
+    right: $right;
+  }
+  @if $bottom != '' {
+    bottom: $bottom;
+  }
+  @if $left != '' {
+    left: $left;
+  }
+  z-index: $zindex;
+}
+
+@mixin wordBreak() {
+  word-break: break-all;
+  word-break: break-word;
+}

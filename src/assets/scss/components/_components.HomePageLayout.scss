@@ -1,0 +1,30 @@
+.home__container {
+  .home__inner {
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .home__inner {
+    max-width: 544px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home__inner {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home__inner {
+    max-width: 940px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home__inner {
+    max-width: 1140px;
+  }
+}

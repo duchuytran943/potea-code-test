@@ -1,0 +1,40 @@
+.footer__container {
+  background-color: $color_gray_7;
+  margin-top: 2rem;
+
+  .footer__inner {
+    @include flexCenter();
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+
+    .footer__info {
+      margin-left: 2rem;
+      font-size: $fs_12;
+      color: $color_gray_1;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .footer__inner {
+    max-width: 544px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer__inner {
+    max-width: 940px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer__inner {
+    max-width: 1140px;
+  }
+}
